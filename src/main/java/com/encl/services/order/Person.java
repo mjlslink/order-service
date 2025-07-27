@@ -19,6 +19,8 @@ public class Person {
     @JoinColumn(name="id_card_id")
     private IDCard idCard;
 
+    public Person() {}
+
     public Person(String name, IDCard idCard) {
         this.name = name;
         this.idCard = idCard;

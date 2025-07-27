@@ -11,8 +11,12 @@ import java.util.List;
 @SpringBootApplication
 public class OrderApplication implements CommandLineRunner {
 
+    private final PersonRepository personRepository;
+
     @Autowired
-    private PersonRepository personRepository;
+    OrderApplication( PersonRepository personRepository ) {
+        this.personRepository = personRepository;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(OrderApplication.class);
