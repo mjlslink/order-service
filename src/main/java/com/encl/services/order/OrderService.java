@@ -32,8 +32,8 @@ public class OrderService {
         return personRepository.findById(1).orElse(null);
     }
 
-    /*public List<Order> getOrders(String name) {
+    public List<CustomerOrder> getOrders(String name) {
         return orderRepository.findByPersonName(name);
-    }*/
+    }
 
 }

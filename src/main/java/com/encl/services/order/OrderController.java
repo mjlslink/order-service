@@ -1,11 +1,8 @@
 package com.encl.services.order;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +21,13 @@ public class OrderController {
         List<Person> people = orderService.getPeople();
         return ResponseEntity.ok(people);
     }
+
+    @GetMapping("orders/customer/{name}")
+    public ResponseEntity<List<CustomerOrder>> getOrderFor(@PathVariable String name) {
+        List<CustomerOrder> orders = orderService.getOrders(name);
+        return ResponseEntity.ok(orders);
+    }
+
 
     @GetMapping("one")
     public ResponseEntity<Person> getOne() {
