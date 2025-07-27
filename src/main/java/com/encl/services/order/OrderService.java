@@ -18,18 +18,18 @@ public class OrderService {
         this.orderRepository = orderRepository;
     }
 
-    public OrderStatus placeOrder(Order order) {
+   /* public OrderStatus placeOrder(Order order) {
 
         //what are the step to order something?
         return OrderStatus.PLACED;
     }
-
+*/
     public List<Person> getPeople() {
         return personRepository.findAll();
     }
 
-    public List<Order> getOrders(String name) {
-        return orderRepository.findByName(name);
-    }
+    /*public List<Order> getOrders(String name) {
+        return orderRepository.findByPersonName(name);
+    }*/
 
 }

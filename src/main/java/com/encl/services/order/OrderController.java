@@ -19,7 +19,7 @@ public class OrderController {
         orderService = service;
     }
 
-    @GetMapping("orders")
+    @GetMapping("people")
     public ResponseEntity<List<Person>> getPeople() {
         List<Person> people = orderService.getPeople();
         return ResponseEntity.ok(people);

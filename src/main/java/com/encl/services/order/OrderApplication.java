@@ -34,8 +34,8 @@ public class OrderApplication implements CommandLineRunner {
         persons.add(new Person("Alex", new IDCard()));
         personRepository.saveAll(persons);
 
-        List<Order> orders = new ArrayList<>();
-        orders.add(new Order(persons.get(2)));
-        orderRepository.saveAll(orders);
+       // List<Order> orders = new ArrayList<>();
+        //orders.add(new Order(persons.get(2)));
+        //orderRepository.saveAll(orders);
     }
 }

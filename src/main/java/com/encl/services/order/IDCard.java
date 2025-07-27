@@ -1,5 +1,6 @@
 package com.encl.services.order;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +18,7 @@ public class IDCard {
     private String code = UUID.randomUUID().toString();
 
     @OneToOne(mappedBy = "idCard")
+    @JsonManagedReference
     private Person person;
 
 }
