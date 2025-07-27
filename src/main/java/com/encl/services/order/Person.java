@@ -1,5 +1,6 @@
 package com.encl.services.order;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -20,11 +21,7 @@ public class Person {
 
     @OneToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name="id_card_id")
-    @JsonManagedReference
     private IDCard idCard;
-
-    @OneToOne(mappedBy = "person")
-    private Person person;
 
     public Person() {}
 

@@ -28,6 +28,10 @@ public class OrderService {
         return personRepository.findAll();
     }
 
+    public Person getFirst() {
+        return personRepository.findById(1).orElse(null);
+    }
+
     /*public List<Order> getOrders(String name) {
         return orderRepository.findByPersonName(name);
     }*/

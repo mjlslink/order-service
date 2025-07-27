@@ -24,4 +24,10 @@ public class OrderController {
         List<Person> people = orderService.getPeople();
         return ResponseEntity.ok(people);
     }
+
+    @GetMapping("one")
+    public ResponseEntity<Person> getOne() {
+        Person people = orderService.getFirst();
+        return ResponseEntity.ok(people);
+    }
 }
