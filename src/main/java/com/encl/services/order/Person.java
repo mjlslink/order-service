@@ -19,6 +19,9 @@ public class Person {
     @JoinColumn(name="id_card_id")
     private IDCard idCard;
 
+    @OneToOne(mappedBy = "person")
+    private Person person;
+
     public Person() {}
 
     public Person(String name, IDCard idCard) {

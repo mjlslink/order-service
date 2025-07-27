@@ -10,9 +10,12 @@ public class OrderService {
 
     private final PersonRepository personRepository;
 
+    private final OrderRepository orderRepository;
+
     @Autowired
-    OrderService(PersonRepository personRepository) {
+    OrderService(PersonRepository personRepository, OrderRepository orderRepository) {
         this.personRepository=personRepository;
+        this.orderRepository = orderRepository;
     }
 
     public OrderStatus placeOrder(Order order) {
@@ -24,4 +27,9 @@ public class OrderService {
     public List<Person> getPeople() {
         return personRepository.findAll();
     }
+
+    public List<Order> getOrders(String name) {
+        return orderRepository.findByName(name);
+    }
+
 }
